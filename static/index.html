@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Seris Stock Manager</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    input { margin: 5px; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Ajouter un produit</h2>
+  <form action="/add" method="post">
+    <input type="text" name="produit" placeholder="Produit" required>
+    <input type="text" name="imei" placeholder="IMEI" required>
+    <input type="text" name="serial" placeholder="N° Série" required>
+    <input type="date" name="date_entree" required>
+    <input type="number" name="garantie" placeholder="Garantie (années)" required>
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <h2>Stock actuel</h2>
+  <table>
+    <thead><tr><th>Produit</th><th>IMEI</th><th>N° Série</th><th>Date Entrée</th><th>Garantie</th></tr></thead>
+    <tbody>
+      {{ROWS}}
+    </tbody>
+  </table>
+</body>
+</html>
